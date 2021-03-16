@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import Main from '.'
 
 describe('', () => {
-  it('should render the heading', () => {
+  it('should render the colors correctly', () => {
     const { container } = render(<Main />)
 
     expect(
@@ -12,12 +12,6 @@ describe('', () => {
       })
     ).toBeInTheDocument()
 
-    expect(container.firstChild).toMatchInlineSnapshot(`
-      <main>
-        <h1>
-          react avançado
-        </h1>
-      </main>
-    `)
+    expect(container.firstChild).toHaveStyle({ 'background-color': '#06092b' })
   })
 })
